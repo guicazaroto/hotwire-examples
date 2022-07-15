@@ -1,5 +1,9 @@
 <h1>Home here</h1>
 <%= 
   link_to "External", "https://google.com.br",
-  data: { controller: 'sweetalert', action: 'click->sweetalert#showAlert'  } 
+  data: {
+    controller: 'sweetalert',
+    action: 'click->sweetalert#showAlert',
+    sweetalert_title_value: 'Are you sure?'
+  } 
   %>
