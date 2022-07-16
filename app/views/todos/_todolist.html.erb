@@ -1,0 +1,9 @@
+<div id="todos">
+  <% @todos.each do |todo| %>
+    <%= render todo %>
+    <p>
+      <%= link_to "Show this todo", todo %> | 
+      <%= link_to "Edit this todo", edit_todo_path(todo) %>
+    </p>
+  <% end %>
+</div>

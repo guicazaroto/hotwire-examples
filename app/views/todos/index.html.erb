@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="container">
+  <div class="col-md-6 mx-auto">
+    <h1 class="text-center text-primary">Your Todos</h1>
+    <h4 class="text-success">Create a new</h4>
+    <%= render "form", todo: Todo.new %>
+    
+    <div class="mt-5">
+      <h4 class="text-success">List</h4>
+      <%= render "todolist" %>
+    </div>
+  </div>
+</div>
+
