@@ -1,19 +1,11 @@
 <div class="container">
   <h1>Usuários</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  
+  <%= form_with url: users_path, method: :get, data: { turbo_frame: 'search' } do |f|  %>
+    <%= f.label :query, "Search for:", class: "form-label" %>
+    <%= f.text_field :query, class: "form-control", value: params[:query] %>
+    <%= f.submit "Search", class: "btn btn-info mt-3" %>
+  <% end %>
+  
+  <%= render "users_table", users: @users %>
 </div>
