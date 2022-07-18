@@ -1,25 +1,24 @@
 <div id="<%= "#{dom_id(todo)}_item" %>">
-  <p>
-    <strong>Title:</strong>
-    <%= turbo_frame_tag dom_id(todo) do %>
-     <%= link_to todo.title, edit_todo_path(todo) %>
-     
-     <% if todo.complete? %>
-      <%= button_to "Mark incomplete", 
-        todo_path(todo, todo: { status: 'incomplete' }),
-        method: :patch,
-        class: "btn btn-success"
-      %>
-     <% else %>
-      <%= button_to "Mark complete",
-        todo_path(todo, todo: { status: 'complete' }),
-        method: :patch,
-        class: "btn btn-secondary"
-      %>
-     <% end %>
+  <%= turbo_frame_tag dom_id(todo) do %>
+    <p>
+      <strong>Title:</strong>
+      <%= link_to todo.title, edit_todo_path(todo) %>
+      
+      <% if todo.complete? %>
+        <%= button_to "Mark incomplete", 
+          todo_path(todo, todo: { status: 'incomplete' }),
+          method: :patch,
+          class: "btn btn-success"
+        %>
+      <% else %>
+        <%= button_to "Mark complete",
+          todo_path(todo, todo: { status: 'complete' }),
+          method: :patch,
+          class: "btn btn-secondary"
+        %>
+      <% end %>
 
-     <%= button_to "Delete", todo_path(todo), method: :delete, class: "btn btn-danger" %>
-    <% end %>
-  </p>
-
+      <%= button_to "Delete", todo_path(todo), method: :delete, class: "btn btn-danger" %>
+    </p>
+  <% end %>
 </div>
