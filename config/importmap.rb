@@ -6,3 +6,4 @@ pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "sweetalert2", to: "https://ga.jspm.io/npm:sweetalert2@11.4.23/dist/sweetalert2.all.js"
+pin "lodash", to: "https://ga.jspm.io/npm:lodash@4.17.21/lodash.js"
